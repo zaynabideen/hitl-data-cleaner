@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-08T16:46:18+00:00",
+  "created_from": "sample_orders_messy.csv",
+  "created_by": "test-runner",
+  "source_columns": [
+    "order_id",
+    "order_date",
+    "customer_name",
+    "email",
+    "country",
+    "product",
+    "quantity",
+    "unit_price",
+    "status"
+  ],
+  "steps": [
+    {
+      "rule": "casing_whitespace",
+      "column": "customer_name",
+      "proposal_id": "case::customer_name",
+      "strategy": "trim_canonical"
+    },
+    {
+      "rule": "casing_whitespace",
+      "column": "email",
+      "proposal_id": "case::email",
+      "strategy": "trim_canonical"
+    },
+    {
+      "rule": "casing_whitespace",
+      "column": "country",
+      "proposal_id": "case::country",
+      "strategy": "trim_canonical"
+    },
+    {
+      "rule": "casing_whitespace",
+      "column": "status",
+      "proposal_id": "case::status",
+      "strategy": "trim_canonical"
+    },
+    {
+      "rule": "missing_values",
+      "column": "country",
+      "proposal_id": "missing::country",
+      "strategy": "to_null"
+    },
+    {
+      "rule": "missing_values",
+      "column": "quantity",
+      "proposal_id": "missing::quantity",
+      "strategy": "to_null"
+    },
+    {
+      "rule": "missing_values",
+      "column": "unit_price",
+      "proposal_id": "missing::unit_price",
+      "strategy": "to_null"
+    },
+    {
+      "rule": "missing_values",
+      "column": "status",
+      "proposal_id": "missing::status",
+      "strategy": "to_null"
+    },
+    {
+      "rule": "date_format",
+      "column": "order_date",
+      "proposal_id": "date::order_date",
+      "strategy": "iso_dayfirst"
+    },
+    {
+      "rule": "duplicates",
+      "column": null,
+      "proposal_id": "dupes::rows",
+      "strategy": "drop_normalised"
+    }
+  ],
+  "skipped": [
+    {
+      "rule": "missing_values",
+      "column": "email",
+      "proposal_id": "missing::email",
+      "note": "keep gap"
+    }
+  ]
+}

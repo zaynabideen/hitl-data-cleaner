@@ -1,0 +1,195 @@
+order_id,order_date,customer_name,email,country,product,quantity,unit_price,status
+ORD-1114,26/04/2025,Bilal Ahmed,bilal.ahmed@example.invalid,Ireland,Monitor Arm,3,157.5,pending
+ORD-1167,2025-01-28,Bilal Butt,bilal.butt@example.invalid,PAKISTAN,USB-C Hub,2,183.96,Delivered
+ORD-1019,2025-07-11,Ayesha Ahmed,ayesha.ahmed@example.invalid,Pakistan,Cable Organiser,2,83.49,Shipped
+ORD-1106,2025-04-10,Nadia Qureshi,nadia.qureshi@example.invalid,  United Kingdom,Cable Organiser,1,127.46,null
+ORD-1066,2025-03-16,  Sana Butt ,sana.butt@example.invalid,united kingdom,Laptop Stand,2,45.99,cancelled
+ORD-1040,2025-02-06,Usman Butt,usman.butt@example.invalid,pakistan,Laptop Stand,2,83.23,cancelled
+ORD-1002,2025-03-18,Laila Khan,laila.khan@example.invalid,UK ,Desk Lamp,1,23.43,Cancelled
+ORD-1102,06/05/2025,Ayesha Raza,ayesha.raza@example.invalid,Ireland,USB-C Hub,4,172.46,cancelled
+ORD-1079,2025-04-20,Tariq Qureshi,tariq.qureshi@example.invalid,UK ,Monitor Arm,5,13.2,cancelled
+ORD-1026,2025-02-08,Mariam Butt,mariam.butt@example.invalid,uk,USB-C Hub,1,104.62,shipped
+ORD-1047,2025-05-15,Zara Siddiqui,zara.siddiqui@example.invalid,UK ,Webcam 1080p,5,94.94,delivered
+ORD-1095,2025-02-25,Zara Chaudhry,zara.chaudhry@example.invalid,pakistan,Webcam 1080p,1,184.97,cancelled
+ORD-1109,2025-02-12,HINA SIDDIQUI,hina.siddiqui@example.invalid,UK ,Wireless Mouse,3,150.67,Shipped
+ORD-1152,2025-05-25,  Nadia Siddiqui ,nadia.siddiqui@example.invalid,pakistan,Desk Lamp,3,142.89,delivered
+ORD-1177,09/07/2025,Tariq Sheikh,tariq.sheikh@example.invalid,PAKISTAN,Cable Organiser,1,22.93,Delivered
+ORD-1129,2025-01-26,ZARA BUTT,zara.butt@example.invalid,N/A,USB-C Hub,5,99.57,cancelled
+ORD-1009,2025-03-03,Hina Siddiqui,-,United Kingdom,Monitor Arm,5,18.09,Shipped
+ORD-1059,2025-06-24,Tariq Ahmed,tariq.ahmed@example.invalid,Pakistan,USB-C Hub,4,181.84,shipped
+ORD-1115,2025-04-18,Zara Ahmed,zara.ahmed@example.invalid,N/A,Cable Organiser,1,23.15,Pending
+ORD-1014,23/01/2025,Laila Siddiqui,laila.siddiqui@example.invalid,UK ,Monitor Arm,2,176.03,delivered
+ORD-1024,2025-01-26,Kamran Malik,kamran.malik@example.invalid,uk,Mechanical Keyboard,5,115.0,pending
+ORD-1110,2025-03-07,Faisal Qureshi,faisal.qureshi@example.invalid,  United Kingdom,USB-C Hub,1,93.41,shipped
+ORD-1153,2025-04-07,Laila Ahmed,laila.ahmed@example.invalid,uk,Desk Lamp,2,158.05,cancelled
+ORD-1130,2025-07-23,  Tariq Qureshi ,tariq.qureshi@example.invalid,UK ,Laptop Stand,5,34.4,pending
+ORD-1108,2025-05-27,Omar Raza,omar.raza@example.invalid,united kingdom,Wireless Mouse,3,163.16,cancelled
+ORD-1062,2025-03-09,  LAILA CHAUDHRY ,laila.chaudhry@example.invalid,pakistan,Laptop Stand,4,45.21,Cancelled
+ORD-1178,04/16/2025,  Nadia Chaudhry ,nadia.chaudhry@example.invalid,united kingdom,Cable Organiser,3,104.45,cancelled
+ORD-1069,2025-01-09,FAISAL BUTT,faisal.butt@example.invalid,PAKISTAN,Cable Organiser,1,156.54,cancelled
+ORD-1162,2025-01-25,Faisal Malik,faisal.malik@example.invalid,pakistan,USB-C Hub,1,140.76,cancelled
+ORD-1003,2025-01-30,Tariq Qureshi,tariq.qureshi@example.invalid,United Kingdom,Monitor Arm,1,107.25,delivered
+ORD-1045,01/07/2025,Ayesha Ahmed,ayesha.ahmed@example.invalid,united kingdom,Cable Organiser,1,108.23,SHIPPED
+ORD-1039,2025-01-06,Nadia Siddiqui,nadia.siddiqui@example.invalid,united kingdom,Desk Lamp,5,63.79,cancelled
+ORD-1005,2025-04-13,Sana Chaudhry,sana.chaudhry@example.invalid,Pakistan,Webcam 1080p,1,117.67,SHIPPED
+ORD-1116,2025-01-27,Bilal Farooq,bilal.farooq@example.invalid,Pakistan,Desk Lamp,1,81.47,SHIPPED
+ORD-1055,2025-01-23,Laila Khan,laila.khan@example.invalid,united kingdom,Mechanical Keyboard,2,92.92,pending
+ORD-1027,05/15/2025,Sana Malik,sana.malik@example.invalid,uk,Webcam 1080p,5,186.05,pending
+ORD-1043,2025-06-24,Mariam Raza,mariam.raza@example.invalid,united kingdom,Wireless Mouse,1,51.18,Pending
+ORD-1043,2025-06-24,Mariam Raza,mariam.raza@example.invalid,united kingdom,Wireless Mouse,1,51.18,Pending
+ORD-1093,2025-05-13,Rabia Raza,rabia.raza@example.invalid,PAKISTAN,Cable Organiser,3,130.16,Pending
+ORD-1064,2025-05-11,Nadia Sheikh,nadia.sheikh@example.invalid,PAKISTAN,Mechanical Keyboard,4,132.75,delivered
+ORD-1018,09/03/2025,  Laila Chaudhry ,laila.chaudhry@example.invalid,,Monitor Arm,4,91.73,Shipped
+ORD-1158,2025-06-09,  Kamran Malik ,kamran.malik@example.invalid,Pakistan,Webcam 1080p,4,116.48,Shipped
+ORD-1172,01/13/2025,Bilal Khan,bilal.khan@example.invalid,ireland,Monitor Arm,5,123.12,
+ORD-1084,2025-05-06,Omar Chaudhry,omar.chaudhry@example.invalid,pakistan,Laptop Stand,1,56.92,pending
+ORD-1016,2025-04-02,  Ayesha Raza ,ayesha.raza@example.invalid,ireland,Wireless Mouse,2,18.8,pending
+ORD-1062,2025-03-09,  Laila Chaudhry ,laila.chaudhry@example.invalid,pakistan,Laptop Stand,4,45.21,cancelled
+ORD-1072,2025-04-25,Sana Raza,sana.raza@example.invalid,ireland,Mechanical Keyboard,3,127.03,Shipped
+ORD-1046,06/02/2025,Imran Malik,imran.malik@example.invalid,Ireland,Cable Organiser,5,155.24,Delivered
+ORD-1135,2025-05-14,Hina Khan,hina.khan@example.invalid,Pakistan,Mechanical Keyboard,4,187.35,Shipped
+ORD-1021,05/24/2025,Kamran Khan,kamran.khan@example.invalid,united kingdom,Monitor Arm,1,36.55,SHIPPED
+ORD-1121,2025-06-17,Ayesha Ahmed,N/A,united kingdom,Desk Lamp,3,138.19,Cancelled
+ORD-1127,2025-01-25,Kamran Qureshi,kamran.qureshi@example.invalid,ireland,USB-C Hub,4,10.31,Cancelled
+ORD-1100,2025-05-05,Bilal Malik,bilal.malik@example.invalid,united kingdom,Desk Lamp,-,150.8,Cancelled
+ORD-1140,2025-07-21,  Imran Sheikh ,imran.sheikh@example.invalid,-,USB-C Hub,5,147.18,SHIPPED
+ORD-1168,2025-06-19,Bilal Chaudhry,bilal.chaudhry@example.invalid,Ireland,Laptop Stand,2,85.45,cancelled
+ORD-1032,2025-04-10,Faisal Siddiqui,faisal.siddiqui@example.invalid,null,Wireless Mouse,3,44.84,shipped
+ORD-1013,10/01/2025,  Bilal Qureshi ,bilal.qureshi@example.invalid,  United Kingdom,USB-C Hub,1,140.07,pending
+ORD-1008,2025-04-17,Rabia Chaudhry,rabia.chaudhry@example.invalid,UK ,Monitor Arm,5,79.39,pending
+ORD-1056,2025-02-04,Faisal Sheikh,faisal.sheikh@example.invalid,  United Kingdom,USB-C Hub,2,182.56,cancelled
+ORD-1131,2025-07-19,Mariam Ahmed,mariam.ahmed@example.invalid,PAKISTAN,Cable Organiser,5,123.85,delivered
+ORD-1033,2025-03-10,Mariam Ahmed,mariam.ahmed@example.invalid,Ireland,Mechanical Keyboard,2,184.66,Cancelled
+ORD-1146,2025-02-12,KAMRAN FAROOQ,kamran.farooq@example.invalid,united kingdom,Monitor Arm,1,78.85,Delivered
+ORD-1086,2025-05-09,Tariq Qureshi,tariq.qureshi@example.invalid,Ireland,Mechanical Keyboard,2,110.85,Cancelled
+ORD-1058,2025-06-15,Omar Ahmed,omar.ahmed@example.invalid,  United Kingdom,Wireless Mouse,3,103.73,Shipped
+ORD-1111,2025-07-24,Tariq Siddiqui,tariq.siddiqui@example.invalid,PAKISTAN,Webcam 1080p,4,123.91,Delivered
+ORD-1103,2025-03-24,Mariam Farooq,mariam.farooq@example.invalid,United Kingdom,USB-C Hub,2,168.42,shipped
+ORD-1118,2025-03-04,  Kamran Ahmed ,kamran.ahmed@example.invalid,Ireland,Mechanical Keyboard,4,160.74,cancelled
+ORD-1161,2025-03-07,Laila Qureshi,laila.qureshi@example.invalid,ireland,Desk Lamp,3,87.52,shipped
+ORD-1001,2025-01-13,Bilal Sheikh,bilal.sheikh@example.invalid,ireland,Monitor Arm,2,88.48,shipped
+ORD-1165,2025-07-06,Bilal Siddiqui,bilal.siddiqui@example.invalid,  United Kingdom,Laptop Stand,3,99.35,SHIPPED
+ORD-1137,2025-01-30,Nadia Farooq,nadia.farooq@example.invalid,ireland,Laptop Stand,3,63.12,SHIPPED
+ORD-1023,2025-03-02,  Ayesha Raza ,ayesha.raza@example.invalid,United Kingdom,Laptop Stand,1,181.84,cancelled
+ORD-1157,2025-04-14,Tariq Malik,tariq.malik@example.invalid,PAKISTAN,USB-C Hub,-,20.9,cancelled
+ORD-1050,04/23/2025,Zara Raza,zara.raza@example.invalid,United Kingdom,Webcam 1080p,4,162.25,Cancelled
+ORD-1166,2025-02-06,Omar Malik,omar.malik@example.invalid,PAKISTAN,Cable Organiser,5,30.18,shipped
+ORD-1077,2025-06-09,Sana Khan,sana.khan@example.invalid,ireland,Webcam 1080p,5,13.84,shipped
+ORD-1150,2025-06-14,  Imran Ahmed ,imran.ahmed@example.invalid,PAKISTAN,Mechanical Keyboard,2,59.66,Delivered
+ORD-1022,01/06/2025,Zara Butt,zara.butt@example.invalid,PAKISTAN,Cable Organiser,2,41.16,Pending
+ORD-1174,2025-07-01,AYESHA MALIK,ayesha.malik@example.invalid,  ,Desk Lamp,3,140.49,Delivered
+ORD-1149,2025-02-13,Nadia Raza,nadia.raza@example.invalid,uk,Mechanical Keyboard,4,123.11,N/A
+ORD-1158,2025-06-09,  Kamran Malik ,kamran.malik@example.invalid,Pakistan,Webcam 1080p,4,116.48,Shipped
+ORD-1170,18/05/2025,Rabia Butt,rabia.butt@example.invalid,  United Kingdom,Laptop Stand,3,118.63,pending
+ORD-1011,2025-04-27,Hina Chaudhry,  ,  United Kingdom,USB-C Hub,3,160.1,Delivered
+ORD-1007,23/07/2025,Ayesha Sheikh,ayesha.sheikh@example.invalid,Pakistan,Desk Lamp,2,126.12,Cancelled
+ORD-1082,05/10/2025,Bilal Khan,bilal.khan@example.invalid,ireland,Wireless Mouse,5,80.96,pending
+ORD-1099,04/09/2025,Nadia Siddiqui,nadia.siddiqui@example.invalid,UK ,Webcam 1080p,3,153.27,Pending
+ORD-1041,2025-04-13,MARIAM MALIK,mariam.malik@example.invalid,  United Kingdom,Webcam 1080p,N/A,84.95,Cancelled
+ORD-1036,2025-03-05,OMAR KHAN,omar.khan@example.invalid,pakistan,Webcam 1080p,3,123.57,cancelled
+ORD-1025,2025-06-13,Bilal Farooq,bilal.farooq@example.invalid,ireland,Desk Lamp,2,54.97,Delivered
+ORD-1092,2025-02-12,Omar Siddiqui,omar.siddiqui@example.invalid,UK ,Monitor Arm,5,131.17,SHIPPED
+ORD-1061,2025-05-23,Laila Chaudhry,laila.chaudhry@example.invalid,ireland,USB-C Hub,3,167.4,Pending
+ORD-1141,2025-07-14,Rabia Siddiqui,rabia.siddiqui@example.invalid,Pakistan,Laptop Stand,5,154.15,SHIPPED
+ORD-1173,2025-05-13,Rabia Siddiqui,rabia.siddiqui@example.invalid,  United Kingdom,Monitor Arm,3,89.27,delivered
+ORD-1104,2025-02-09,Zara Chaudhry,zara.chaudhry@example.invalid,Ireland,Monitor Arm,1,158.65,Cancelled
+ORD-1133,2025-05-15,Bilal Butt,bilal.butt@example.invalid,United Kingdom,USB-C Hub,5,114.92,shipped
+ORD-1144,2025-07-24,Zara Siddiqui,zara.siddiqui@example.invalid,UK ,Webcam 1080p,1,N/A,pending
+ORD-1000,2025-06-18,Bilal Khan,bilal.khan@example.invalid,united kingdom,USB-C Hub,5,83.5,pending
+ORD-1159,2025-04-25,Hina Chaudhry,hina.chaudhry@example.invalid,  ,Wireless Mouse,1,128.99,cancelled
+ORD-1098,2025-04-09,Usman Malik,usman.malik@example.invalid,null,Laptop Stand,5,166.45,cancelled
+ORD-1164,2025-05-11,Omar Ahmed,omar.ahmed@example.invalid,uk,USB-C Hub,3,128.38,delivered
+ORD-1126,2025-05-22,Usman Sheikh,usman.sheikh@example.invalid,Pakistan,Monitor Arm,1,90.41,Shipped
+ORD-1060,2025-06-17,Rabia Chaudhry,rabia.chaudhry@example.invalid,pakistan,Webcam 1080p,5,154.0,SHIPPED
+ORD-1091,2025-04-27,  Bilal Ahmed ,bilal.ahmed@example.invalid,  United Kingdom,Webcam 1080p,3,74.91,shipped
+ORD-1042,2025-06-03,Faisal Qureshi,faisal.qureshi@example.invalid,PAKISTAN,Laptop Stand,1,58.29,pending
+ORD-1122,2025-07-23,Faisal Raza,faisal.raza@example.invalid,United Kingdom,USB-C Hub,3,87.37,SHIPPED
+ORD-1012,2025-05-15,Faisal Sheikh,faisal.sheikh@example.invalid,UK ,Wireless Mouse,5,65.66,Delivered
+ORD-1037,2025-04-18,MARIAM SIDDIQUI,mariam.siddiqui@example.invalid,United Kingdom,Webcam 1080p,1,26.28,Shipped
+ORD-1029,2025-02-02,Usman Siddiqui,usman.siddiqui@example.invalid,  United Kingdom,Webcam 1080p,5,95.66,pending
+ORD-1148,2025-03-20,RABIA CHAUDHRY,rabia.chaudhry@example.invalid,UK ,USB-C Hub,1,53.21,delivered
+ORD-1008,2025-04-17,RABIA CHAUDHRY,rabia.chaudhry@example.invalid,UK ,Monitor Arm,5,79.39,Pending
+ORD-1161,2025-03-07,Laila Qureshi,laila.qureshi@example.invalid,ireland,Desk Lamp,3,87.52,shipped
+ORD-1085,2025-04-22,Tariq Siddiqui,  ,United Kingdom,Cable Organiser,2,87.99,Pending
+ORD-1006,2025-02-18,Nadia Sheikh,nadia.sheikh@example.invalid,pakistan,Mechanical Keyboard,3,160.32,Pending
+ORD-1155,2025-02-26,Rabia Khan,rabia.khan@example.invalid,  United Kingdom,Cable Organiser,3,13.18,Delivered
+ORD-1030,19/01/2025,Bilal Farooq,bilal.farooq@example.invalid,-,Webcam 1080p,2,141.77,shipped
+ORD-1075,03/04/2025,  Mariam Malik ,mariam.malik@example.invalid,UK ,Webcam 1080p,4,29.19,Shipped
+ORD-1094,02/15/2025,Bilal Chaudhry,bilal.chaudhry@example.invalid,ireland,Webcam 1080p,4,160.77,Pending
+ORD-1078,2025-07-18,Hina Chaudhry,hina.chaudhry@example.invalid,PAKISTAN,Cable Organiser,1,92.28,-
+ORD-1013,10/01/2025,  Bilal Qureshi ,bilal.qureshi@example.invalid,  United Kingdom,USB-C Hub,1,140.07,pending
+ORD-1017,2025-01-14,Kamran Qureshi,kamran.qureshi@example.invalid,united kingdom,Laptop Stand,5,111.66,Pending
+ORD-1124,2025-06-28,Faisal Chaudhry,faisal.chaudhry@example.invalid,  United Kingdom,Wireless Mouse,1,43.81,shipped
+ORD-1146,2025-02-12,Kamran Farooq,kamran.farooq@example.invalid,united kingdom,Monitor Arm,1,78.85,delivered
+ORD-1160,19/04/2025,Tariq Siddiqui,tariq.siddiqui@example.invalid,UK ,Cable Organiser,1,29.54,shipped
+ORD-1119,2025-07-21,Kamran Raza,kamran.raza@example.invalid,Ireland,Webcam 1080p,1,39.43,shipped
+ORD-1034,2025-02-20,Rabia Farooq,rabia.farooq@example.invalid,Pakistan,Mechanical Keyboard,3,35.55,Cancelled
+ORD-1068,2025-03-24,Ayesha Siddiqui,ayesha.siddiqui@example.invalid,United Kingdom,Laptop Stand,4,25.22,shipped
+ORD-1149,2025-02-13,Nadia Raza,nadia.raza@example.invalid,uk,Mechanical Keyboard,4,123.11,N/A
+ORD-1051,23/04/2025,Nadia Siddiqui,nadia.siddiqui@example.invalid,united kingdom,Wireless Mouse,4,67.84,delivered
+ORD-1054,2025-07-19,Rabia Farooq,rabia.farooq@example.invalid,pakistan,Wireless Mouse,3,47.42,Pending
+ORD-1147,04/11/2025,  Omar Farooq ,omar.farooq@example.invalid,Pakistan,Desk Lamp,2,31.61,pending
+ORD-1065,2025-03-25,Mariam Raza,mariam.raza@example.invalid,Ireland,Desk Lamp,3,134.77,Delivered
+ORD-1113,2025-02-12,Bilal Malik,bilal.malik@example.invalid,ireland,Webcam 1080p,4,98.76,Delivered
+ORD-1138,2025-06-22,Usman Farooq,usman.farooq@example.invalid,uk,Desk Lamp,2,128.8,Pending
+ORD-1020,18/03/2025,Imran Sheikh,imran.sheikh@example.invalid,uk,USB-C Hub,1,125.52,delivered
+ORD-1145,2025-04-11,Nadia Ahmed,nadia.ahmed@example.invalid,Ireland,Webcam 1080p,4,171.72,Shipped
+ORD-1010,2025-04-13,Faisal Chaudhry,null,Ireland,Webcam 1080p,3,26.86,shipped
+ORD-1074,2025-03-20,Usman Butt,usman.butt@example.invalid,PAKISTAN,Mechanical Keyboard,4,27.45,Shipped
+ORD-1037,2025-04-18,Mariam Siddiqui,mariam.siddiqui@example.invalid,United Kingdom,Webcam 1080p,1,26.28,Shipped
+ORD-1088,2025-02-07,  Nadia Raza ,nadia.raza@example.invalid,uk,Wireless Mouse,2,81.32,delivered
+ORD-1101,2025-01-09,Sana Siddiqui,sana.siddiqui@example.invalid,Pakistan,Desk Lamp,1,129.66,Pending
+ORD-1097,2025-03-03,Mariam Sheikh,mariam.sheikh@example.invalid,UK ,Webcam 1080p,4,12.59,Shipped
+ORD-1163,05/13/2025,Nadia Farooq,nadia.farooq@example.invalid,uk,Mechanical Keyboard,5,58.62,Pending
+ORD-1031,2025-05-27,Usman Farooq,usman.farooq@example.invalid,uk,Laptop Stand,5,13.08,Shipped
+ORD-1151,2025-01-06,Faisal Qureshi,faisal.qureshi@example.invalid,pakistan,Desk Lamp,1,180.5,SHIPPED
+ORD-1070,2025-04-18,Imran Ahmed,imran.ahmed@example.invalid,United Kingdom,Webcam 1080p,1,187.89,SHIPPED
+ORD-1174,2025-07-01,Ayesha Malik,ayesha.malik@example.invalid,  ,Desk Lamp,3,140.49,delivered
+ORD-1089,2025-06-22,Hina Ahmed,hina.ahmed@example.invalid,  United Kingdom,USB-C Hub,3,162.05,cancelled
+ORD-1171,2025-01-29,Nadia Malik,nadia.malik@example.invalid,ireland,Desk Lamp,5,14.02,SHIPPED
+ORD-1081,2025-05-18,Tariq Raza,tariq.raza@example.invalid,PAKISTAN,Webcam 1080p,-,167.25,shipped
+ORD-1125,01/03/2025,  Laila Malik ,laila.malik@example.invalid,  United Kingdom,Monitor Arm,2,,cancelled
+ORD-1175,04/04/2025,  Zara Malik ,zara.malik@example.invalid,Ireland,USB-C Hub,3,88.55,Delivered
+ORD-1073,2025-02-15,Omar Malik,omar.malik@example.invalid,UK ,Cable Organiser,3,12.46,shipped
+ORD-1154,2025-06-30,Imran Chaudhry,imran.chaudhry@example.invalid,UK ,Wireless Mouse,3,43.29,Shipped
+ORD-1057,02/02/2025,Faisal Khan,faisal.khan@example.invalid,ireland,USB-C Hub,5,132.54,Cancelled
+ORD-1076,07/01/2025,Sana Farooq,sana.farooq@example.invalid,Ireland,Wireless Mouse,4,N/A,Delivered
+ORD-1142,2025-02-17,Usman Chaudhry,usman.chaudhry@example.invalid,Pakistan,Cable Organiser,2,103.96,pending
+ORD-1071,2025-02-05,Nadia Farooq,nadia.farooq@example.invalid,N/A,Cable Organiser,3,163.48,pending
+ORD-1063,13/03/2025,  Tariq Butt ,tariq.butt@example.invalid,  United Kingdom,USB-C Hub,2,137.91,Delivered
+ORD-1049,2025-04-14,Usman Malik,usman.malik@example.invalid,uk,Monitor Arm,1,44.25,Cancelled
+ORD-1123,2025-04-24,Imran Raza,imran.raza@example.invalid,  United Kingdom,Monitor Arm,1,58.19,pending
+ORD-1058,2025-06-15,Omar Ahmed,omar.ahmed@example.invalid,  United Kingdom,Wireless Mouse,3,103.73,Shipped
+ORD-1067,05/09/2025,Sana Raza,sana.raza@example.invalid,Ireland,Webcam 1080p,2,72.36,Pending
+ORD-1090,2025-05-22,  ZARA QURESHI ,zara.qureshi@example.invalid,PAKISTAN,Webcam 1080p,2,142.78,Delivered
+ORD-1139,2025-07-14,Mariam Siddiqui,mariam.siddiqui@example.invalid,pakistan,Laptop Stand,2,68.87,Delivered
+ORD-1087,2025-03-06,Kamran Farooq,kamran.farooq@example.invalid,PAKISTAN,Laptop Stand,4,182.58,Cancelled
+ORD-1136,2025-05-20,Nadia Raza,nadia.raza@example.invalid,Pakistan,Wireless Mouse,3,null,Pending
+ORD-1117,25/06/2025,Laila Farooq,laila.farooq@example.invalid,United Kingdom,Mechanical Keyboard,2,126.35,Pending
+ORD-1044,2025-05-07,Faisal Ahmed,faisal.ahmed@example.invalid,ireland,Monitor Arm,2,33.43,pending
+ORD-1097,2025-03-03,Mariam Sheikh,mariam.sheikh@example.invalid,UK ,Webcam 1080p,4,12.59,Shipped
+ORD-1096,2025-06-23,Zara Butt,zara.butt@example.invalid,United Kingdom,Mechanical Keyboard,5,152.85,delivered
+ORD-1134,2025-04-14,Imran Raza,imran.raza@example.invalid,United Kingdom,Mechanical Keyboard,3,116.91,delivered
+ORD-1122,2025-07-23,Faisal Raza,faisal.raza@example.invalid,United Kingdom,USB-C Hub,3,87.37,SHIPPED
+ORD-1169,2025-01-20,Kamran Ahmed,kamran.ahmed@example.invalid,  United Kingdom,Mechanical Keyboard,3,179.42,SHIPPED
+ORD-1083,2025-03-04,Kamran Ahmed,kamran.ahmed@example.invalid,uk,Webcam 1080p,4,158.84,SHIPPED
+ORD-1143,03/26/2025,Laila Chaudhry,laila.chaudhry@example.invalid,united kingdom,Cable Organiser,4,146.92,cancelled
+ORD-1053,2025-01-12,  Bilal Farooq ,bilal.farooq@example.invalid,PAKISTAN,Mechanical Keyboard,4,66.15,SHIPPED
+ORD-1132,2025-06-14,Tariq Qureshi,tariq.qureshi@example.invalid,uk,Webcam 1080p,5,16.75,delivered
+ORD-1035,04/07/2025,Bilal Farooq,-,PAKISTAN,Desk Lamp,3,156.25,pending
+ORD-1015,2025-07-18,Usman Sheikh,usman.sheikh@example.invalid,pakistan,USB-C Hub,2,47.51,cancelled
+ORD-1120,07/04/2025,Laila Butt,laila.butt@example.invalid,Pakistan,Monitor Arm,1,32.39,shipped
+ORD-1156,2025-06-20,Omar Butt,omar.butt@example.invalid,-,Monitor Arm,N/A,142.15,cancelled
+ORD-1128,2025-03-30,Hina Raza,-,Pakistan,Monitor Arm,5,79.58,Shipped
+ORD-1134,2025-04-14,Imran Raza,imran.raza@example.invalid,United Kingdom,Mechanical Keyboard,3,116.91,delivered
+ORD-1052,2025-06-28,Laila Farooq,laila.farooq@example.invalid,PAKISTAN,Monitor Arm,5,109.5,SHIPPED
+ORD-1176,2025-02-11,Bilal Khan,bilal.khan@example.invalid,pakistan,Laptop Stand,3,176.91,-
+ORD-1105,2025-06-12,Zara Butt,zara.butt@example.invalid,Pakistan,Desk Lamp,1,185.52,pending
+ORD-1038,2025-04-27,Tariq Qureshi,tariq.qureshi@example.invalid,Ireland,Webcam 1080p,1,135.85,Shipped
+ORD-1107,06/19/2025,Mariam Raza,mariam.raza@example.invalid,United Kingdom,Mechanical Keyboard,1,157.94,cancelled
+ORD-1080,2025-01-28,TARIQ BUTT,tariq.butt@example.invalid,pakistan,Cable Organiser,4,16.39,Delivered
+ORD-1112,13/01/2025,Ayesha Chaudhry,ayesha.chaudhry@example.invalid,pakistan,USB-C Hub,1,65.29,Shipped
+ORD-1004,2025-06-15,Faisal Qureshi,faisal.qureshi@example.invalid,uk,USB-C Hub,2,164.63,shipped
+ORD-1048,2025-03-08,Sana Chaudhry,sana.chaudhry@example.invalid,  United Kingdom,USB-C Hub,2,34.03,pending
+ORD-1028,2025-06-22,Nadia Khan,nadia.khan@example.invalid,Ireland,Laptop Stand,3,27.57,-
+ORD-1179,02/02/2025,Zara Malik,zara.malik@example.invalid,Pakistan,Mechanical Keyboard,3,107.46,Cancelled
