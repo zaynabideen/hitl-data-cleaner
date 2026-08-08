@@ -1,4 +1,4 @@
-# HITL Data Cleaner
+# HITL (Human-In-The-Loop) Data Cleaner
 
 A data cleaning tool that **proposes** changes in plain language and waits for a
 human decision on each one. Every approved change is permanently logged, and the
