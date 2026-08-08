@@ -8,6 +8,8 @@ contains something it has never seen.
 Other tools clean first and let you inspect afterwards. This one doesn't touch
 your data until you say so.
 
+![Reviewing and approving cleaning proposals](demo.gif)
+
 ```
 CSV upload → detect → proposal in plain English → Approve / Modify / Skip
           → apply only what was approved
