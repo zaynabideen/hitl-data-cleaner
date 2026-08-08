@@ -240,10 +240,51 @@ def part_three(out, log2):
         print(f"  (note: could not copy .db into this folder - {e})")
 
 
+def part_four():
+    """Regression: text rules must fire on a non-`object` string dtype.
+
+    pandas 2 reads text as `object`; pandas 3 uses a dedicated string
+    dtype. Code that tests `dtype == object` silently stops proposing date
+    and casing fixes under pandas 3 - no error, just missing proposals.
+    This reproduces that dtype on either version.
+    """
+    section("11. Text rules survive a pandas-3 style string dtype")
+    df = cleaner.load_csv("sample_orders_messy.csv")
+    baseline = {p.rule for p in cleaner.detect(df)}
+
+    typed = df.copy()
+    for c in typed.columns:
+        typed[c] = typed[c].astype("string")   # not `object`
+    check("test fixture really is a non-object dtype",
+          typed["country"].dtype != object, str(typed["country"].dtype))
+
+    rules = {p.rule for p in cleaner.detect(typed)}
+    check("casing rule still fires", "casing_whitespace" in rules, str(rules))
+    check("date rule still fires", "date_format" in rules, str(rules))
+    check("same rules as with object dtype", rules == baseline,
+          f"{rules} vs {baseline}")
+
+    # infer_types only converts when nearly every value parses, so use an
+    # already-clean column here - the point is the dtype, not the content.
+    clean = pd.DataFrame({
+        "order_date": pd.Series(["2025-01-05", "2025-02-11", "2025-03-02"],
+                                dtype="string"),
+        "unit_price": pd.Series(["10.50", "3.25", "88.00"], dtype="string"),
+    })
+    dtypes = sql_export.infer_types(clean).dtypes
+    check("SQL export types dates from a string dtype",
+          "datetime" in str(dtypes["order_date"]).lower(),
+          str(dtypes["order_date"]))
+    check("SQL export types numbers from a string dtype",
+          "float" in str(dtypes["unit_price"]).lower(),
+          str(dtypes["unit_price"]))
+
+
 def main():
     work, log, recipe = part_one()
     out, log2 = part_two(recipe)
     part_three(out, log2)
+    part_four()
 
     print("\nArtefacts: cleaned_orders.csv, decision_log.json, "
           "provenance_report.md, recipe.json, cleaned_data.db")

@@ -14,6 +14,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 import pandas as pd
+from pandas.api.types import is_numeric_dtype, is_string_dtype
 
 # Strings that mean "missing" but are not real nulls.
 NULL_TOKENS = {"", "n/a", "na", "null", "none", "-", "--", "nan", "?"}
@@ -52,6 +53,21 @@ class Proposal:
 # --------------------------------------------------------------------------
 # helpers
 # --------------------------------------------------------------------------
+
+def _is_text_series(s: pd.Series) -> bool:
+    """True for a column of text, regardless of pandas version.
+
+    Do NOT test `dtype == object` here. pandas 2 reads text columns as
+    `object`, but pandas 3 gives them a dedicated string dtype, so the
+    object check silently returns False and every text-based rule stops
+    firing without raising anything. That failure is invisible - the app
+    just stops proposing date and casing fixes - so it is worth the extra
+    helper.
+    """
+    if is_numeric_dtype(s):
+        return False
+    return s.dtype == object or is_string_dtype(s)
+
 
 def _is_blank(v: Any) -> bool:
     if v is None:
@@ -110,7 +126,7 @@ def _parse_date(v: Any, dayfirst: bool) -> pd.Timestamp | None:
 
 
 def _text_cols(df: pd.DataFrame) -> list[str]:
-    return [c for c in df.columns if df[c].dtype == object]
+    return [c for c in df.columns if _is_text_series(df[c])]
 
 
 def _canonical_form(values: pd.Series) -> dict[str, str]:
@@ -134,7 +150,7 @@ def detect_date_format(df: pd.DataFrame) -> list[Proposal]:
     out = []
     for col in df.columns:
         s = df[col]
-        if s.dtype != object or not _looks_like_date_col(col, s):
+        if not _is_text_series(s) or not _looks_like_date_col(col, s):
             continue
 
         kinds = s.map(lambda v: None if _is_blank(v) else _classify_date(v))

@@ -18,6 +18,8 @@ from typing import Any
 
 import pandas as pd
 
+import cleaner
+
 TABLE_DATA = "orders_clean"
 TABLE_LOG = "decision_log"
 TABLE_META = "run_metadata"
@@ -31,7 +33,9 @@ def infer_types(df: pd.DataFrame) -> pd.DataFrame:
     """
     out = df.copy()
     for col in out.columns:
-        if out[col].dtype != object:
+        # Version-agnostic text check: pandas 3 gives text columns a string
+        # dtype rather than `object`, so `dtype != object` would skip them.
+        if not cleaner._is_text_series(out[col]):
             continue
         s = out[col].dropna().astype(str).str.strip()
         s = s[s != ""]
