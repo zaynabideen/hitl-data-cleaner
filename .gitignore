@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+*.env
+
+# secrets - never commit
+.github_token
+token.txt
+credentials.json
+
+# generated artefacts (reproducible via make_sample_data.py / test_pipeline.py)
+*.db
+*.db-journal
+/cleaned_*.csv
+/decision_log.json
+/provenance_report.md
+/recipe.json
+
+# local staging folder used for uploading
+github_upload/
+
+.streamlit/secrets.toml
+.DS_Store
+.idea/
+.vscode/
