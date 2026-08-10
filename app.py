@@ -138,7 +138,11 @@ if mode == "Review a file":
 
     if upload is not None and S.get("filename") != upload.name:
         raw = upload.getvalue()
-        df = cleaner.load_csv(upload)
+        try:
+            df = cleaner.load_csv(upload)
+        except cleaner.LoadError as e:
+            st.error(str(e))
+            st.stop()
         reset()
         S.filename, S.original, S.df = upload.name, df.copy(), df.copy()
         S.proposals, S.idx = cleaner.detect(df), 0

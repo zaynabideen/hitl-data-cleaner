@@ -592,6 +592,71 @@ def apply(df: pd.DataFrame, p: Proposal, strategy: str
     return APPLIERS[p.rule](df, p, strategy)
 
 
-def load_csv(path_or_buffer) -> pd.DataFrame:
-    """Read everything as text so nothing is silently coerced on load."""
-    return pd.read_csv(path_or_buffer, dtype=str, keep_default_na=False)
+class LoadError(Exception):
+    """Raised when a file cannot be read as a table, with advice attached."""
+
+
+def _rewind(buf):
+    try:
+        buf.seek(0)
+    except (AttributeError, OSError):
+        pass
+
+
+def load_csv(path_or_buffer, sep: str | None = None,
+             encoding: str | None = None) -> pd.DataFrame:
+    """Read a delimited text file as all-text, so nothing is coerced on load.
+
+    Two things real-world exports do that a naive `read_csv` gets wrong:
+
+    * Excel in much of Europe writes `;`-separated files. Read with the
+      default comma they parse as a single fat column and every rule then
+      finds nothing - a silent, confusing no-op. We sniff the delimiter.
+    * Excel on Windows often writes cp1252, not UTF-8. That raises
+      UnicodeDecodeError mid-read. We fall back through common encodings.
+    """
+    encodings = [encoding] if encoding else ["utf-8-sig", "cp1252", "latin-1"]
+    last_err: Exception | None = None
+
+    for enc in encodings:
+        try:
+            _rewind(path_or_buffer)
+            if sep is not None:
+                df = pd.read_csv(path_or_buffer, dtype=str,
+                                 keep_default_na=False, sep=sep, encoding=enc)
+            else:
+                # sep=None asks the python engine to sniff the delimiter.
+                df = pd.read_csv(path_or_buffer, dtype=str,
+                                 keep_default_na=False, sep=None,
+                                 engine="python", encoding=enc)
+            break
+        except UnicodeDecodeError as e:
+            last_err = e
+            continue
+        except Exception as e:                      # noqa: BLE001
+            last_err = e
+            if sep is None:
+                # Sniffing can fail on ragged files; retry with a plain comma.
+                try:
+                    _rewind(path_or_buffer)
+                    df = pd.read_csv(path_or_buffer, dtype=str,
+                                     keep_default_na=False, encoding=enc)
+                    break
+                except Exception as e2:             # noqa: BLE001
+                    last_err = e2
+            continue
+    else:
+        raise LoadError(
+            "Could not read this file as text. Tried "
+            f"{', '.join(encodings)}. Underlying error: {last_err}")
+
+    if df.shape[1] == 1 and sep is None:
+        only = str(df.columns[0])
+        for cand in (";", "\t", "|"):
+            if cand in only:
+                raise LoadError(
+                    f"This file parsed into a single column, so it is "
+                    f"probably {cand!r}-separated rather than comma-separated. "
+                    f"The header came through as {only!r}. Re-save it as a "
+                    "standard CSV, or pass sep to load_csv().")
+    return df

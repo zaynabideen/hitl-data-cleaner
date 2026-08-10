@@ -280,11 +280,60 @@ def part_four():
           str(dtypes["unit_price"]))
 
 
+def part_five():
+    """Real-world file quirks that would otherwise look like 'tool broken'."""
+    import io
+    section("12. Awkward input files are handled or explained")
+
+    df = cleaner.load_csv(io.StringIO("id;name;city\n1;Ali;London\n2;Sara;Leeds"))
+    check("semicolon-separated file parses into real columns",
+          list(df.columns) == ["id", "name", "city"], str(list(df.columns)))
+
+    df = cleaner.load_csv(io.StringIO("id\tname\n1\tAli\n2\tSara"))
+    check("tab-separated file parses into real columns",
+          list(df.columns) == ["id", "name"], str(list(df.columns)))
+
+    raw = io.BytesIO("id,name\n1,Renée\n2,José\n".encode("cp1252"))
+    try:
+        df = cleaner.load_csv(raw)
+        ok = "Ren" in str(df["name"].iloc[0])
+    except Exception as e:                                   # noqa: BLE001
+        ok, df = False, None
+        print(f"      (raised {type(e).__name__})")
+    check("non-UTF-8 (Excel/Windows) file still loads", ok)
+
+    # A genuinely clean file must not have issues invented for it.
+    clean = cleaner.load_csv(io.StringIO(
+        "id,name,city,amount\n1,Ali,London,10.5\n2,Sara,Leeds,22.0"))
+    check("clean file produces no proposals",
+          cleaner.detect(clean) == [], "must not invent work")
+
+    # Different domain entirely - rules are column-driven, not e-commerce-only.
+    hr = cleaner.load_csv(io.StringIO(
+        "employee_id,full_name,department,join_date,salary\n"
+        "E1,  Ali Raza ,Sales,2023-04-01,45000\n"
+        "E2,ALI RAZA,sales,01/05/2023,52000\n"
+        "E3,Sara Khan,Engineering,13/06/2023,N/A\n"
+        "E1,  Ali Raza ,Sales,2023-04-01,45000\n"))
+    rules = {p.rule for p in cleaner.detect(hr)}
+    check("all four rules fire on a non-e-commerce file",
+          rules == {"casing_whitespace", "missing_values", "date_format",
+                    "duplicates"}, str(rules))
+
+    # No date column -> the date rule simply stays quiet, it does not error.
+    nodate = cleaner.load_csv(io.StringIO(
+        "sku,warehouse,qty\nA-1,LDN,12\nA-2,ldn,\nA-1,LDN,12\n"))
+    rules = {p.rule for p in cleaner.detect(nodate)}
+    check("no date column means no date proposal, not a crash",
+          "date_format" not in rules and rules, str(rules))
+
+
 def main():
     work, log, recipe = part_one()
     out, log2 = part_two(recipe)
     part_three(out, log2)
     part_four()
+    part_five()
 
     print("\nArtefacts: cleaned_orders.csv, decision_log.json, "
           "provenance_report.md, recipe.json, cleaned_data.db")

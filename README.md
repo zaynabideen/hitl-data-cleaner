@@ -1,4 +1,4 @@
-# HITL (Human-In-The-Loop) Data Cleaner
+# HITL Data Cleaner
 
 A data cleaning tool that **proposes** changes in plain language and waits for a
 human decision on each one. Every approved change is permanently logged, and the
@@ -83,8 +83,29 @@ rest.
 | Missing values | normalise to null, fill median/zero/mode/`Unknown`, drop rows |
 | Casing & whitespace | trim + canonical spelling, trim only, title/lower/upper, flag only |
 
-Scope is deliberately one domain. Generic cleaning across arbitrary datasets is
-what kills projects like this.
+The rules are driven by what a column *contains*, not by what the file is about,
+so an HR export or an inventory extract works too. Choosing e-commerce orders
+was a decision about which rules to build — not a restriction on what you can
+load. Generic cleaning across arbitrary datasets is what kills projects like
+this, so the rule set stays small and deep rather than broad and shallow.
+
+## Using your own file
+
+| Rule | Fires when your file has | Stays silent when |
+|------|--------------------------|-------------------|
+| Missing values | Blanks, or `N/A` / `null` / `none` / `-` / `?` | Every cell has a real value |
+| Duplicate rows | Repeats, exactly or after trim + lowercase | Every row is unique |
+| Casing & whitespace | Text columns with stray spaces or case variants | No text columns, or text is consistent |
+| Date format | A mostly-date column mixing ISO with slash-style | No date column, or one format throughout |
+
+A file with nothing wrong produces **zero** proposals — that is correct, not a
+failure. A tool that invents work is worse than useless.
+
+Input handling: the loader sniffs the delimiter (`,`, `;`, tab, `|`) and falls
+back through `utf-8-sig`, `cp1252` and `latin-1`, because Excel exports are
+frequently semicolon-separated and rarely UTF-8. If a file still collapses into
+a single column you get a message naming the likely separator rather than a
+silent empty result. `.xlsx` is not supported — save as CSV first.
 
 ## Outputs
 
