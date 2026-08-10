@@ -11,6 +11,7 @@ Run:  streamlit run app.py
 from __future__ import annotations
 
 import json
+import os
 
 import pandas as pd
 import streamlit as st
@@ -31,6 +32,34 @@ SESSION_KEYS = ("df", "original", "proposals", "idx", "log", "filename",
 def reset():
     for k in SESSION_KEYS:
         S.pop(k, None)
+
+
+SAMPLE_FILE = "sample_orders_messy.csv"
+SAMPLE_MONTH2 = "sample_orders_month2.csv"
+EXAMPLE_RECIPE = os.path.join("examples", "recipe.json")
+
+
+def _start_review(name: str, raw: bytes, df, reviewer: str):
+    """Seed a fresh review session from raw bytes already read."""
+    reset()
+    S.filename, S.original, S.df = name, df.copy(), df.copy()
+    S.proposals, S.idx = cleaner.detect(df), 0
+    S.log = DecisionLog(source_file=name, source_sha256=sha256_bytes(raw),
+                        source_rows=len(df), source_columns=list(df.columns),
+                        approved_by=reviewer or "unknown")
+
+
+def load_sample(path: str = SAMPLE_FILE):
+    """One-click demo path, so a hosted visitor can try it without a file."""
+    if not os.path.exists(path):
+        st.error(f"`{path}` is not next to app.py. "
+                 "Run `python make_sample_data.py` to create it.")
+        return
+    with open(path, "rb") as f:
+        raw = f.read()
+    _start_review(path, raw, cleaner.load_csv(path),
+                  st.session_state.get("reviewer_name", "Guest"))
+    st.rerun()
 
 
 def strategy_picker(p: cleaner.Proposal, key_prefix: str):
@@ -119,6 +148,7 @@ with st.sidebar:
     mode = st.radio("Mode", ["Review a file", "Replay a recipe"],
                     key="mode", on_change=reset)
     reviewer = st.text_input("Reviewer name", value="Zain",
+                             key="reviewer_name",
                              help="Recorded against every decision.")
 
     if "df" in S:
@@ -159,8 +189,16 @@ if mode == "Review a file":
             "later.\n\n"
             "- Every approved change is written to a decision log\n"
             "- The log doubles as a replay recipe for next month's file\n"
-            "- Your file never leaves this machine\n\n"
-            "No file handy? Run `python make_sample_data.py`.")
+            "- Your file never leaves this machine\n")
+
+        st.divider()
+        st.markdown("**No file handy?** Load the bundled sample — 194 rows of "
+                    "synthetic orders with four kinds of problem deliberately "
+                    "baked in.")
+        if st.button("Try it with the sample file", type="primary"):
+            load_sample()
+        st.caption("Fabricated data only: invented names, and every address on "
+                   "the reserved `.invalid` domain.")
         st.stop()
 
     proposals, log = S.proposals, S.log
@@ -233,9 +271,30 @@ else:
             "Anything it has **not** seen - a new column, a new kind of issue, "
             "a strategy that no longer applies - stops the run and asks you.\n\n"
             "A recipe that silently applies itself to data it was never "
-            "approved for is the exact failure this tool exists to prevent.\n\n"
-            "Try it: `python make_sample_data.py` writes a month-2 file with "
-            "deliberate drift.")
+            "approved for is the exact failure this tool exists to prevent.")
+
+        st.divider()
+        st.markdown("**Want to see the drift stop happen?** Load the bundled "
+                    "month-2 file and the recipe from a previous review. The "
+                    "month-2 file has a new `discount_code` column and a new "
+                    "casing problem the recipe has never been shown.")
+        if st.button("Try the replay demo", type="primary"):
+            missing = [p for p in (SAMPLE_MONTH2, EXAMPLE_RECIPE)
+                       if not os.path.exists(p)]
+            if missing:
+                st.error("Missing " + ", ".join(f"`{m}`" for m in missing) +
+                         ". Run `python make_sample_data.py` first.")
+            else:
+                with open(SAMPLE_MONTH2, "rb") as f:
+                    raw = f.read()
+                reset()
+                S.filename = SAMPLE_MONTH2
+                df = cleaner.load_csv(SAMPLE_MONTH2)
+                S.original, S.df, S.raw = df.copy(), df.copy(), raw
+                S.recipe = replay_mod.load_recipe(EXAMPLE_RECIPE)
+                S.plan = replay_mod.plan(df, S.recipe)
+                S.drift_choices, S.drift_idx = {}, 0
+                st.rerun()
         st.stop()
 
     if S.get("filename") != upload.name or "plan" not in S:
